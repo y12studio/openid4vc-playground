@@ -20,22 +20,22 @@ importers:
   agent:
     dependencies:
       '@aries-framework/askar':
-        specifier: file:/Users/timo/Developer/openid4vc-playground/agent/dependencies/aries-framework-askar-v0.4.2.tgz
+        specifier: file:/home/cylin/src/fork/openid4vc-playground/agent/dependencies/aries-framework-askar-v0.4.2.tgz
         version: file:agent/dependencies/aries-framework-askar-v0.4.2.tgz(@hyperledger/aries-askar-shared@0.2.0-dev.5)(expo@50.0.3)(react-native@0.73.2)
       '@aries-framework/cheqd':
-        specifier: file:/Users/timo/Developer/openid4vc-playground/agent/dependencies/aries-framework-cheqd-v0.4.2.tgz
+        specifier: file:/home/cylin/src/fork/openid4vc-playground/agent/dependencies/aries-framework-cheqd-v0.4.2.tgz
         version: file:agent/dependencies/aries-framework-cheqd-v0.4.2.tgz(expo@50.0.3)(react-native@0.73.2)
       '@aries-framework/core':
-        specifier: file:/Users/timo/Developer/openid4vc-playground/agent/dependencies/aries-framework-core-v0.4.2.tgz
+        specifier: file:/home/cylin/src/fork/openid4vc-playground/agent/dependencies/aries-framework-core-v0.4.2.tgz
         version: file:agent/dependencies/aries-framework-core-v0.4.2.tgz(expo@50.0.3)(react-native@0.73.2)
       '@aries-framework/indy-vdr':
-        specifier: file:/Users/timo/Developer/openid4vc-playground/agent/dependencies/aries-framework-indy-vdr-v0.4.2.tgz
+        specifier: file:/home/cylin/src/fork/openid4vc-playground/agent/dependencies/aries-framework-indy-vdr-v0.4.2.tgz
         version: file:agent/dependencies/aries-framework-indy-vdr-v0.4.2.tgz(@hyperledger/indy-vdr-shared@0.2.0-dev.5)(expo@50.0.3)(react-native@0.73.2)
       '@aries-framework/node':
-        specifier: file:/Users/timo/Developer/openid4vc-playground/agent/dependencies/aries-framework-node-v0.4.2.tgz
+        specifier: file:/home/cylin/src/fork/openid4vc-playground/agent/dependencies/aries-framework-node-v0.4.2.tgz
         version: file:agent/dependencies/aries-framework-node-v0.4.2.tgz(expo@50.0.3)(react-native@0.73.2)
       '@aries-framework/openid4vc':
-        specifier: file:/Users/timo/Developer/openid4vc-playground/agent/dependencies/aries-framework-openid4vc-v0.4.2.tgz
+        specifier: file:/home/cylin/src/fork/openid4vc-playground/agent/dependencies/aries-framework-openid4vc-v0.4.2.tgz
         version: file:agent/dependencies/aries-framework-openid4vc-v0.4.2.tgz(expo@50.0.3)(react-native@0.73.2)
       '@hyperledger/aries-askar-nodejs':
         specifier: 0.2.0-dev.5
@@ -2443,7 +2443,7 @@ packages:
     resolution: {integrity: sha512-bOhuFnlRaS7CU33+rFFIWdcET/Vkyn1vsN8BYFwCDEF5P1fVVvYN7bFOsQLTMD3nvi35C1AGmtqUr/Wfv8Xaow==}
     engines: {node: '>=12'}
     dependencies:
-      '@expo/spawn-async': 1.5.0
+      '@expo/spawn-async': 1.7.2
       exec-async: 2.2.0
     dev: false
     optional: true
@@ -2452,7 +2452,7 @@ packages:
     resolution: {integrity: sha512-LKdo/6y4W7llZ6ghsg1kdx2CeH/qR/c6QI/JI8oPUvppsZoeIYjSkdflce978fAMfR8IXoi0wt0jA2w0kWpwbg==}
     dependencies:
       '@expo/json-file': 8.3.0
-      '@expo/spawn-async': 1.5.0
+      '@expo/spawn-async': 1.7.2
       ansi-regex: 5.0.1
       chalk: 4.1.2
       find-up: 5.0.0

@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  agent:
+    build:
+      context: agent
+      dockerfile: Dockerfile
+    ports:
+      - "5001:3001"
+    environment:
+      AGENT_HOST: https://localhost:3001
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.openid4vc-server.rule: Host(`localhost`) && (PathPrefix(`/api`) || PathPrefix(`/oid4vci`) || PathPrefix(`/siop`) || PathPrefix(`/.well-known`))
+      traefik.http.routers.openid4vc-server.entrypoints: web-secure
+      traefik.http.routers.openid4vc-server.service: openid4vc-server-service
+      traefik.http.services.openid4vc-server-service.loadbalancer.server.port: 3001
+  app:
+    build:
+      context: app
+      dockerfile: Dockerfile
+    ports:
+      - 5080:80
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.openid4vc-app.rule: Host(`localhost`) && !PathPrefix(`/oid4vci`) && !PathPrefix(`/siop`) && !PathPrefix(`/api`) && !PathPrefix(`/.well-known`)
+      traefik.http.routers.openid4vc-app.entrypoints: web-secure
+      traefik.http.routers.openid4vc-app.service: openid4vc-app-service
+      traefik.http.services.openid4vc-app-service.loadbalancer.server.port: 80
+  traefik:
+    image: "traefik:v2.10"
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web-secure.http.tls=true"
+      - "--entrypoints.web-secure.address=:3001"
+    ports:
+      - "3001:3001"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
